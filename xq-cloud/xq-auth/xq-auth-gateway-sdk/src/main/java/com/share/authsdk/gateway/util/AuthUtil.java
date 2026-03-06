@@ -1,5 +1,6 @@
 package com.share.authsdk.gateway.util;
 
+import cn.hutool.core.collection.CollUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.util.AntPathMatcher;
