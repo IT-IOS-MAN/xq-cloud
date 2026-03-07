@@ -1,12 +1,32 @@
 package com.share.authsdk.gateway.util;
 
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.collection.CollectionUtil;
+import cn.hutool.core.exceptions.ValidateException;
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
+import cn.hutool.jwt.JWT;
+import cn.hutool.jwt.JWTValidator;
+import com.share.auth.common.domain.PrivilegeRoleDTO;
+import com.share.common.domain.R;
+import com.share.common.domain.dto.LoginUserDTO;
+import com.share.common.exceptions.ForbiddenException;
+import com.share.common.exceptions.UnauthorizedException;
+import com.share.common.utils.StringUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.redis.core.BoundHashOperations;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.util.AntPathMatcher;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
+import static com.share.auth.common.constants.AuthErrorInfo.Code.EXPIRED_TOKEN_CODE;
+import static com.share.auth.common.constants.AuthErrorInfo.Code.INVALID_TOKEN_CODE;
+import static com.share.auth.common.constants.AuthErrorInfo.Msg.*;
+import static com.share.auth.common.constants.JwtConstants.*;
 
 @Slf4j
 public class AuthUtil {

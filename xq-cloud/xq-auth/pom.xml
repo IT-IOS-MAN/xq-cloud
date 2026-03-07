@@ -15,11 +15,10 @@
     <packaging>pom</packaging>
 
     <modules>
-<!--        <module>xq-auth-common</module>-->
-<!--        <module>xq-auth-service</module>-->
-<!--        <module>xq-auth-resource-sdk</module>-->
         <module>xq-auth-gateway-sdk</module>
         <module>xq-auth-common</module>
+        <module>xq-auth-resource-sdk</module>
+        <module>xq-auth-service</module>
     </modules>
 
     <properties>

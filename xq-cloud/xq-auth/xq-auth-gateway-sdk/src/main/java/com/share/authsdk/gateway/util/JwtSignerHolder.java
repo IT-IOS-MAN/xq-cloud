@@ -6,6 +6,7 @@ import cn.hutool.crypto.asymmetric.AsymmetricAlgorithm;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.jwt.signers.JWTSigner;
 import cn.hutool.jwt.signers.JWTSignerUtil;
+import com.share.auth.common.constants.JwtConstants;
 import com.share.common.utils.CollUtils;
 import com.share.common.utils.MarkedRunnable;
 import lombok.Data;
