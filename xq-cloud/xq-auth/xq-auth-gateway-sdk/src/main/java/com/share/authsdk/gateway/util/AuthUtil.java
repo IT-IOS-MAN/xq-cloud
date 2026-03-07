@@ -1,7 +1,12 @@
 package com.share.authsdk.gateway.util;
 
 import cn.hutool.core.collection.CollUtil;
+import com.share.common.domain.R;
+import com.share.common.domain.dto.LoginUserDTO;
+import com.share.common.utils.StringUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.redis.core.BoundHashOperations;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.util.AntPathMatcher;
 
