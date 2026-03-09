@@ -12,6 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Collection;
 import java.util.Map;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description: web工具类
+ * @date 2026/3/7 16:12
+ */
 @Slf4j
 public class WebUtils {
 

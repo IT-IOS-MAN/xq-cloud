@@ -2,6 +2,12 @@ package com.share.common.constants;
 
 import cn.hutool.core.lang.RegexPool;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description:
+ * @date 2026/3/7 16:12
+ */
 public interface RegexConstants extends RegexPool {
     /**
      * 手机号正则

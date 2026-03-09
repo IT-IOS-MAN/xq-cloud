@@ -7,6 +7,12 @@ import org.springframework.stereotype.Component;
 
 import java.util.Set;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description: 认证配置
+ * @date 2026/3/7 16:12
+ */
 @Data
 @Component
 @ConfigurationProperties(prefix = "xq.auth")

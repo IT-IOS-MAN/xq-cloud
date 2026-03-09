@@ -5,6 +5,12 @@ import com.share.common.constants.ErrorInfo;
 import com.share.common.exceptions.BadRequestException;
 import lombok.Getter;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description:
+ * @date 2026/3/7 16:12
+ */
 @Getter
 public enum UserType implements BaseEnum{
     STAFF(1, "其他员工"),

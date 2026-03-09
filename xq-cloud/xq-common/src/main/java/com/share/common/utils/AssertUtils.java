@@ -6,6 +6,12 @@ import com.share.common.exceptions.BadRequestException;
 
 import java.util.Map;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description:
+ * @date 2026/3/7 16:12
+ */
 public class AssertUtils {
     public static void equals(Object obj1, Object obj2, String ... message){
         if (obj1 == null || obj2 == null) {

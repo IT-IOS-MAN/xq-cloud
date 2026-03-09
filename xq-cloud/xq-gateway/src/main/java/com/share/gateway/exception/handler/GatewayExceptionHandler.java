@@ -26,7 +26,7 @@ import static com.share.common.constants.ErrorInfo.Msg.SERVER_INTER_ERROR;
 
 /**
  * @author xq-cloud
- * @version 1.0
+ * @version 1.0.0
  * @description:
  * @date 2026/3/7 15:55
  */

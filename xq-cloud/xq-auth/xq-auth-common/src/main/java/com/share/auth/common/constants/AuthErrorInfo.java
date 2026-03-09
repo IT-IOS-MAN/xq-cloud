@@ -2,8 +2,8 @@ package com.share.auth.common.constants;
 
 /**
  * @author xq-cloud
- * @version 1.0
- * @description:
+ * @version 1.0.0
+ * @description: 认证错误信息
  * @date 2026/3/7 15:48
  */
 public interface AuthErrorInfo {

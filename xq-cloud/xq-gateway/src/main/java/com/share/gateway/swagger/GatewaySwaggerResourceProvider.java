@@ -13,6 +13,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description: 网关Swagger资源提供者
+ * @date 2026/3/7 16:12
+ */
 @Component
 @Primary
 @RequiredArgsConstructor

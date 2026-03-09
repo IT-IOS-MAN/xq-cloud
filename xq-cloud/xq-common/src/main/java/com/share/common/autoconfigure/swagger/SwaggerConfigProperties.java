@@ -5,6 +5,12 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.io.Serializable;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description:
+ * @date 2026/3/7 16:12
+ */
 @Data
 @ConfigurationProperties(prefix = "tj.swagger")
 public class SwaggerConfigProperties implements Serializable {

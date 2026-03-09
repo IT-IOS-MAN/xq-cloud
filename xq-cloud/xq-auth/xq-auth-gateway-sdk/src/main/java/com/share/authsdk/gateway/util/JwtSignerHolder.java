@@ -23,6 +23,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description:
+ * @date 2026/3/8 1:08
+ */
 @Data
 @Slf4j
 public class JwtSignerHolder {

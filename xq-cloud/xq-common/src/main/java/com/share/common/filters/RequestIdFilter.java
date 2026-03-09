@@ -10,6 +10,12 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description:
+ * @date 2026/3/7 16:12
+ */
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @WebFilter(filterName = "requestIdFilter", urlPatterns = "/**")
 public class RequestIdFilter implements Filter {

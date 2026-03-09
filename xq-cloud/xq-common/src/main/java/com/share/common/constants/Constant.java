@@ -1,6 +1,12 @@
 package com.share.common.constants;
 
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description:
+ * @date 2026/3/7 16:12
+ */
 public interface Constant {
     String REQUEST_ID_HEADER = "requestId";
     String REQUEST_FROM_HEADER = "x-request-from";

@@ -11,6 +11,12 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description: 操作数据库前自动填充需要更新的内容，只支持单个对象，不支持批量插入更新时的填充
+ * @date 2026/3/7 16:12
+ */
 @Configuration
 @ConditionalOnClass({MybatisPlusInterceptor.class, BaseMapper.class})
 public class MybatisConfig {

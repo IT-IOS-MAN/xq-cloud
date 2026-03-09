@@ -11,7 +11,7 @@ import java.util.Set;
 
 /**
  * @author xq-cloud
- * @version 1.0
+ * @version 1.0.0
  * @description: 权限表，包括菜单权限和访问路径权限 服务类
  * @date 2026/3/7 16:40
  */

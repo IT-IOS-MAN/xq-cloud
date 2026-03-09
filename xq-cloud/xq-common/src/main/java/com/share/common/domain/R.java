@@ -10,6 +10,12 @@ import static com.share.common.constants.ErrorInfo.Code.SUCCESS;
 import static com.share.common.constants.ErrorInfo.Code.FAILED;
 import static com.share.common.constants.ErrorInfo.Msg.OK;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description:
+ * @date 2026/3/7 16:12
+ */
 @Data
 @ApiModel(description = "通用响应结果")
 public class R<T> {

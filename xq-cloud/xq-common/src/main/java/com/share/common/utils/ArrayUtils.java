@@ -7,12 +7,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * 数组工具类
- * @ClassName ArrayUtils
- * @author wusongsong
- * @since 2022/7/10 12:02
+ * @author xq-cloud
  * @version 1.0.0
- **/
+ * @description: 数组工具类
+ * @date 2026/3/7 16:12
+ */
 public class ArrayUtils extends ArrayUtil {
 
 

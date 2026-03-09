@@ -1,13 +1,11 @@
 package com.share.common.exceptions;
 
 /**
- * 请求超时异常
- *
- * @ClassName RequestTimeoutException
- * @author wusongsong
- * @since 2022/6/30 16:58
+ * @author xq-cloud
  * @version 1.0.0
- **/
+ * @description: 请求超时异常
+ * @date 2026/3/7 16:12
+ */
 public class RequestTimeoutException  extends CommonException {
     public RequestTimeoutException(String message) {
         super(message);

@@ -6,8 +6,11 @@ import java.lang.reflect.Field;
 import java.math.BigDecimal;
 
 /**
- * Object操作工具
- **/
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description: Object操作工具
+ * @date 2026/3/7 16:12
+ */
 public class ObjectUtils extends ObjectUtil {
 
     /**

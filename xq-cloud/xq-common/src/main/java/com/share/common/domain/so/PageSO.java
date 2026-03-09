@@ -11,6 +11,12 @@ import lombok.experimental.Accessors;
 
 import javax.validation.constraints.Min;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description:
+ * @date 2026/3/7 16:12
+ */
 @Data
 @ApiModel(description = "分页请求参数")
 @Accessors(chain = true)

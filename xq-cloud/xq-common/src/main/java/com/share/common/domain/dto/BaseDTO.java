@@ -5,6 +5,12 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.time.LocalDateTime;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description:
+ * @date 2026/3/7 16:12
+ */
 @ApiModel(description = "DTO基础属性")
 public class BaseDTO {
     @ApiModelProperty("创建人id")

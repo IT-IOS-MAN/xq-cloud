@@ -2,7 +2,7 @@ package com.share.remark.constants;
 
 /**
  * @author xq-cloud
- * @version 1.0
+ * @version 1.0.0
  * @description:
  * @date 2026/3/8 0:50
  */

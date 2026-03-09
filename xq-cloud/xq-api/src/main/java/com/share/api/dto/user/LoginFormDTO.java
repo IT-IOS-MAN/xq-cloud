@@ -8,8 +8,8 @@ import javax.validation.constraints.NotNull;
 
 /**
  * @author xq-cloud
- * @version 1.0
- * @description:
+ * @version 1.0.0
+ * @description: 登录表单实体
  * @date 2026/3/7 16:23
  */
 @Data

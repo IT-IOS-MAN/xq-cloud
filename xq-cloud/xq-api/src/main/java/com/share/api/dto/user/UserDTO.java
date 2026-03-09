@@ -12,12 +12,12 @@ import javax.validation.constraints.Pattern;
 
 /**
  * @author xq-cloud
- * @version 1.0
- * @description:
+ * @version 1.0.0
+ * @description: 用户信息
  * @date 2026/3/7 16:23
  */
 @Data
-@ApiModel(description = "用户详情")
+@ApiModel(description = "用户信息")
 public class UserDTO {
     @ApiModelProperty(value = "用户id", example = "1")
     private Long id;

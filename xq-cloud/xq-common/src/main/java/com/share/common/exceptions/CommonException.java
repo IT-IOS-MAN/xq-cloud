@@ -2,6 +2,12 @@ package com.share.common.exceptions;
 
 import lombok.Getter;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description:
+ * @date 2026/3/7 16:12
+ */
 @Getter
 public class CommonException extends RuntimeException {
     private final int code;

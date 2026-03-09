@@ -9,9 +9,11 @@ import static com.share.common.constants.Constant.DATA_FIELD_NAME_CREATER;
 import static com.share.common.constants.Constant.DATA_FIELD_NAME_UPDATER;
 
 /**
- * 操作数据库前自动填充需要更新的内容，只支持单个对象，不支持批量插入更新时的填充
- *
- **/
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description: 操作数据库前自动填充需要更新的内容，只支持单个对象，不支持批量插入更新时的填充
+ * @date 2026/3/7 16:12
+ */
 public class BaseMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void insertFill(MetaObject metaObject) {

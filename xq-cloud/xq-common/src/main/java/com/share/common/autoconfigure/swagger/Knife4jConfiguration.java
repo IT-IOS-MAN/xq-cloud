@@ -19,6 +19,12 @@ import springfox.documentation.spring.web.plugins.Docket;
 import javax.annotation.Resource;
 import java.time.LocalDateTime;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description:
+ * @date 2026/3/7 16:12
+ */
 @Configuration
 @ConditionalOnProperty(prefix = "tj.swagger", name = "enable",havingValue = "true")
 @EnableConfigurationProperties(SwaggerConfigProperties.class)

@@ -8,13 +8,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 树形数据处理工具
- *
- * @ClassName TreeDataUtils
- * @author wusongsong
- * @since 2022/7/19 14:31
+ * @author xq-cloud
  * @version 1.0.0
- **/
+ * @description: 树形数据处理工具类
+ * @date 2026/3/7 16:12
+ */
 @Slf4j
 public class TreeDataUtils {
 

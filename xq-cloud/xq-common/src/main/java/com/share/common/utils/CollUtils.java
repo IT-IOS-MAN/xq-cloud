@@ -9,7 +9,10 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
- * 继承自 hutool 的集合工具类
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description: 继承自 hutool 的集合工具类
+ * @date 2026/3/7 16:12
  */
 public class CollUtils extends CollectionUtil {
 

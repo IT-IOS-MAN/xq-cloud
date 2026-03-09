@@ -20,7 +20,7 @@ import static com.share.auth.common.constants.JwtConstants.USER_HEADER;
 
 /**
  * @author xq-cloud
- * @version 1.0
+ * @version 1.0.0
  * @description:
  * @date 2026/3/7 15:57
  */

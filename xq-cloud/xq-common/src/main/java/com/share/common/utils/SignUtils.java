@@ -1,11 +1,11 @@
 package com.share.common.utils;
 
 /**
- * @ClassName SignUtils
- * @author wusongsong
- * @since 2022/7/3 11:25
+ * @author xq-cloud
  * @version 1.0.0
- **/
+ * @description: 签名工具类
+ * @date 2026/3/7 16:12
+ */
 
 import cn.hutool.core.util.HexUtil;
 import com.share.common.exceptions.CommonException;

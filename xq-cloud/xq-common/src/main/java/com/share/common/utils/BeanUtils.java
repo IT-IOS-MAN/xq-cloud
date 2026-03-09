@@ -6,7 +6,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * 继承自 hutool 的BeanUtil，增加了bean转换时自定义转换器的功能
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description: 继承自 hutool 的BeanUtil，增加了bean转换时自定义转换器的功能
+ * @date 2026/3/7 16:12
  */
 public class BeanUtils extends BeanUtil {
 

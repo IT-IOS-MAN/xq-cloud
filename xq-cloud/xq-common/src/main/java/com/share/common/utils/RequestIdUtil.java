@@ -5,7 +5,12 @@ import org.slf4j.MDC;
 
 import static com.share.common.constants.Constant.REQUEST_ID_HEADER;
 
-
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description:
+ * @date 2026/3/7 16:12
+ */
 public class RequestIdUtil {
     public static void markRequest() {
         // 1.判断是否已经存在

@@ -8,8 +8,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description:
+ * @date 2026/3/8 1:08
+ */
 @Configuration
 public class AuthAutoConfiguration {
+
 
     @Bean
     @ConditionalOnClass(DiscoveryClient.class)

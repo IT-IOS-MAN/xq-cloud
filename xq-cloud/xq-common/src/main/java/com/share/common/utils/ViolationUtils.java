@@ -7,12 +7,11 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * 手动执行Violation处理校验结果
- * @ClassName ViolationUtils
- * @author wusongsong
- * @since 2022/7/18 20:52
+ * @author xq-cloud
  * @version 1.0.0
- **/
+ * @description: 手动执行Violation处理校验结果
+ * @date 2026/3/7 16:12
+ */
 public class ViolationUtils {
 
     public static <T> void process(Set<ConstraintViolation<T>> violations) {

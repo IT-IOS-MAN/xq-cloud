@@ -15,6 +15,11 @@ import java.util.Set;
  */
 @FeignClient(value = "remark-service", fallbackFactory = RemarkClientFallback.class)
 public interface RemarkClient {
+    /**
+     * 查询业务点赞状态
+     * @param bizIds 业务ID列表
+     * @return 点赞状态
+     */
     @GetMapping("/likes/list")
     Set<Long> isBizLiked(@RequestParam("bizIds") Iterable<Long> bizIds);
 }

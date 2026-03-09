@@ -7,15 +7,13 @@ import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import java.lang.reflect.Field;
 
 /**
- * 将查询条件对象、修改的查询条件转换为QueryWrapper
- * 查询wrapper {@link LambdaQueryWrapper}
- * 更新wrapper {@link LambdaUpdateWrapper}
- *
- * @ClassName SqlWrapperUtils
- * @author wusongsong
- * @since 2022/7/14 11:43
+ * @author xq-cloud
  * @version 1.0.0
- **/
+ * @description: 将查询条件对象、修改的查询条件转换为QueryWrapper
+ *                  查询wrapper {@link LambdaQueryWrapper}
+ *                  更新wrapper {@link LambdaUpdateWrapper}
+ * @date 2026/3/7 16:12
+ */
 public class SqlWrapperUtils {
 
 

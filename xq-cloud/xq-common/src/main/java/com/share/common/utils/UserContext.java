@@ -1,5 +1,11 @@
 package com.share.common.utils;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description: 用户上下文
+ * @date 2026/3/7 16:12
+ */
 public class UserContext {
     private static final ThreadLocal<Long> TL = new ThreadLocal<>();
 

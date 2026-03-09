@@ -4,6 +4,12 @@ import cn.hutool.core.convert.impl.TemporalAccessorConverter;
 
 import java.time.temporal.TemporalAccessor;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description:
+ * @date 2026/3/7 16:12
+ */
 public class TjTemporalConverter extends TemporalAccessorConverter {
     public TjTemporalConverter(Class<?> targetType) {
         super(targetType);

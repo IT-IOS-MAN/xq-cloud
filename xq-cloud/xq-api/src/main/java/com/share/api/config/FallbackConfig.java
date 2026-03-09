@@ -14,11 +14,19 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class FallbackConfig {
 
+    /**
+     * 用户服务降级处理
+     * @return 用户服务降级处理
+     */
     @Bean
     public UserClientFallback userClientFallback(){
         return new UserClientFallback();
     }
 
+    /**
+     * 评论服务降级处理
+     * @return 评论服务降级处理
+     */
     @Bean
     public RemarkClientFallback remarkClientFallback(){
         return new RemarkClientFallback();

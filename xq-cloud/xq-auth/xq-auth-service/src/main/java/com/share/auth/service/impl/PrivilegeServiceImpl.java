@@ -104,7 +104,7 @@ public class PrivilegeServiceImpl extends ServiceImpl<PrivilegeMapper, Privilege
             prDTO.setId(p.getId());
             prDTO.setRoles(roles);
             prDTO.setAntPath(p.getMethod() + ":" + p.getUri());
-            prDTO.setInternal(p.getInternal());
+            prDTO.setHasInternal(p.getInternal());
             // 4.3.存入map
             list.add(prDTO);
         }

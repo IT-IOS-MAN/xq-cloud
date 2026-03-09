@@ -53,7 +53,7 @@ public class PrivilegeCache {
             privilegeRoleDTO.setId(p.getId());
             privilegeRoleDTO.setAntPath(p.getMethod() + ":" + p.getUri());
             privilegeRoleDTO.setRoles(roleIds);
-            privilegeRoleDTO.setInternal(p.getInternal());
+            privilegeRoleDTO.setHasInternal(p.getInternal());
             hashOps.put(p.getId().toString(), JSONUtil.toJsonStr(privilegeRoleDTO));
             incrementVersion();
         } catch (Exception e) {

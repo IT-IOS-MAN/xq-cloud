@@ -13,6 +13,12 @@ import java.sql.SQLException;
 import static com.share.common.constants.Constant.DATA_FIELD_NAME_CREATER;
 import static com.share.common.constants.Constant.DATA_FIELD_NAME_UPDATER;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description:
+ * @date 2026/3/7 16:12
+ */
 public class MyBatisAutoFillInterceptor implements InnerInterceptor {
 
     @Override

@@ -8,8 +8,12 @@ import javax.validation.Payload;
 import java.lang.annotation.*;
 
 /**
- * 用于状态的枚举校验
- **/
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description: 用于状态的枚举校验
+ * @date 2026/3/7 16:12
+ */
+
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PARAMETER, ElementType.FIELD, ElementType.METHOD })

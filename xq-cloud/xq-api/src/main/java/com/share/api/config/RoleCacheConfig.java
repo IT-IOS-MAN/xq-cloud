@@ -12,7 +12,7 @@ import java.time.Duration;
 /**
  * @author xq-cloud
  * @version 1.0
- * @description:
+ * @description: 角色缓存配置
  * @date 2026/3/7 19:29
  */
 public class RoleCacheConfig {

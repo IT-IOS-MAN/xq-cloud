@@ -28,6 +28,12 @@ import static com.share.auth.common.constants.AuthErrorInfo.Code.INVALID_TOKEN_C
 import static com.share.auth.common.constants.AuthErrorInfo.Msg.*;
 import static com.share.auth.common.constants.JwtConstants.*;
 
+/**
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description:
+ * @date 2026/3/8 1:08
+ */
 @Slf4j
 public class AuthUtil {
     // 缓存权限信息

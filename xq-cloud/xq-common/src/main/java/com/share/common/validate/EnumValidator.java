@@ -9,9 +9,11 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 /**
- * 枚举校验器校验逻辑
- *
- **/
+ * @author xq-cloud
+ * @version 1.0.0
+ * @description: 枚举校验器校验逻辑
+ * @date 2026/3/7 16:12
+ */
 @Slf4j
 public class EnumValidator implements ConstraintValidator<EnumValid, BaseEnum> {
 

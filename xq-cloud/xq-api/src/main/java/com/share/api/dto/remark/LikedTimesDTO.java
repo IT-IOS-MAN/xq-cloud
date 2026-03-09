@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: 点赞次数DTO
+ *
  * @date 2026/3/8 1:50
  */
 @Data

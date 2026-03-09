@@ -4,8 +4,8 @@ import java.time.Duration;
 
 /**
  * @author xq-cloud
- * @version 1.0
- * @description:
+ * @version 1.0.0
+ * @description: jwt常量
  * @date 2026/3/7 15:50
  */
 public class JwtConstants {
