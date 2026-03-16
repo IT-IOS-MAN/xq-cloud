@@ -17,6 +17,10 @@ public interface Checker<T> {
 
     }
 
+    /**
+     * 用于实现validation不能校验的数据逻辑
+     * @param data 数据
+     */
     default void check(T data){
     }
 }

@@ -28,7 +28,7 @@ import static com.share.auth.common.constants.JwtConstants.JWT_TOKEN_TTL;
 /**
  * @author xq-cloud
  * @version 1.0
- * @description:
+ * @description: jwt工具类
  * @date 2026/3/7 16:42
  */
 @Component

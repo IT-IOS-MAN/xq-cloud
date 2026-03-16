@@ -16,30 +16,68 @@ import java.util.stream.Collectors;
  */
 public class CollUtils extends CollectionUtil {
 
+    /**
+     * 返回一个空的集合
+     * @param <T> 集合元素类型
+     * @return 空集合
+     */
     public static <T> List<T> emptyList() {
         return Collections.emptyList();
     }
 
+    /**
+     * 返回一个空的集合
+     * @param <T> 集合元素类型
+     * @return 空集合
+     */
     public static <T> Set<T> emptySet() {
         return Collections.emptySet();
     }
 
+    /**
+     * 返回一个空的集合
+     * @param <K> 集合元素类型
+     * @param <V> 集合元素类型
+     * @return 空集合
+     */
     public static <K,V> Map<K, V> emptyMap() {
         return Collections.emptyMap();
     }
 
+    /**
+     * 返回一个只包含一个元素的集合
+     * @param t 元素
+     * @param <T> 元素类型
+     * @return 集合
+     */
     public static <T> Set<T> singletonSet(T t) {
         return Collections.singleton(t);
     }
 
+    /**
+     * 返回一个只包含一个元素的集合
+     * @param t 元素
+     * @param <T> 元素类型
+     * @return 集合
+     */
     public static <T> List<T> singletonList(T t) {
         return Collections.singletonList(t);
     }
 
+    /**
+     * 将字符串集合转换为整数集合
+     * @param originList 字符串集合
+     * @return 整数集合
+     */
     public static List<Integer> convertToInteger(List<String> originList){
         return CollUtils.isNotEmpty(originList) ? originList.stream().map(NumberUtils::parseInt).collect(Collectors.toList()) : null;
     }
 
+    /**
+     * 将字符串集合转换为长整数集合
+     * @param originList 字符串集合
+     * @return 长整数集合
+     */
     public static List<Long> convertToLong(List<String> originLIst){
         return CollUtils.isNotEmpty(originLIst) ? originLIst.stream().map(NumberUtils::parseLong).collect(Collectors.toList()) : null;
     }
@@ -59,6 +97,13 @@ public class CollUtils extends CollectionUtil {
         return IterUtil.join(collection.iterator(), conjunction);
     }
 
+    /**
+     * 以 conjunction 为分隔符将集合转换为字符串 如果集合元素为数组、Iterable或Iterator，则递归组合其为字符串
+     * @param collection 集合
+     * @param conjunction 分隔符
+     * @param <T> 集合元素类型
+     * @return 连接后的字符串
+     */
     public static <T> String joinIgnoreNull(Collection<T> collection, CharSequence conjunction) {
         if (null == collection || collection.isEmpty()) {
             return null;

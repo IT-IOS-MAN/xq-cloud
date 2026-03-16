@@ -8,7 +8,7 @@ import lombok.Getter;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: 用户类型枚举
  * @date 2026/3/7 16:12
  */
 @Getter
@@ -21,6 +21,11 @@ public enum UserType implements BaseEnum{
     int value;
     String desc;
 
+    /**
+     * 构造方法
+     * @param value
+     * @param desc
+     */
     UserType(int value, String desc) {
         this.value = value;
         this.desc = desc;

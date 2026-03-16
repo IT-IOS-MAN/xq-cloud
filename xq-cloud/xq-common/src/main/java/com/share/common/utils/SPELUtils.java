@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: SPEL工具类
  * @date 2026/3/7 16:12
  */
 public class SPELUtils {
@@ -72,6 +72,6 @@ public class SPELUtils {
         Object [] users = new Object[1];
         users[0] = new User();
 
-        System.out.println(parse("tj:#{user.id}", new String[]{"user"}, users));
+        System.out.println(parse("xq:#{user.id}", new String[]{"user"}, users));
     }
 }

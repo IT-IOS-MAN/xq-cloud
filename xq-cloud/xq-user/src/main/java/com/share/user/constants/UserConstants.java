@@ -5,7 +5,7 @@ import java.time.Duration;
 /**
  * @author xq-cloud
  * @version 1.0
- * @description:
+ * @description: 用户常量
  * @date 2026/3/7 19:36
  */
 public interface UserConstants {

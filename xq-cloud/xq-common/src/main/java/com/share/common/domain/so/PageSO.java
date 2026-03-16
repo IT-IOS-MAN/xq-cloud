@@ -14,7 +14,7 @@ import javax.validation.constraints.Min;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: 分页请求参数
  * @date 2026/3/7 16:12
  */
 @Data
@@ -41,10 +41,20 @@ public class PageSO<Condition> {
     @ApiModelProperty(value = "排序字段", example = "id")
     private String sortBy;
 
+    /**
+     * 获取分页起始位置
+     * @return 起始位置
+     */
     public int from(){
         return (pageNo - 1) * pageSize;
     }
 
+    /**
+     * 转换为mybatis-plus分页对象
+     * @param orderItems 排序字段
+     * @param <T> 泛型
+     * @return 分页对象
+     */
     public <T> Page<T> toMpPage(OrderItem... orderItems) {
         Page<T> page = new Page<>(pageNo, pageSize);
         // 是否手动指定排序方式
@@ -64,6 +74,13 @@ public class PageSO<Condition> {
         return page;
     }
 
+    /**
+     * 转换为mybatis-plus分页对象
+     * @param defaultSortBy 默认排序字段
+     * @param isAsc 是否升序
+     * @param <T> 泛型
+     * @return 分页对象
+     */
     public <T> Page<T> toMpPage(String defaultSortBy, boolean isAsc) {
         if (StringUtils.isBlank(sortBy)){
             sortBy = defaultSortBy;
@@ -76,6 +93,12 @@ public class PageSO<Condition> {
         page.addOrder(orderItem);
         return page;
     }
+
+    /**
+     * 转换为mybatis-plus分页对象
+     * @param <T> 泛型
+     * @return 分页对象
+     */
     public <T> Page<T> toMpPageDefaultSortByCreateTimeDesc() {
         return toMpPage(Constant.DATA_FIELD_NAME_CREATE_TIME, false);
     }

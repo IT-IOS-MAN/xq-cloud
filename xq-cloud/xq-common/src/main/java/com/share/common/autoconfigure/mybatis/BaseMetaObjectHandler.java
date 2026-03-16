@@ -15,6 +15,11 @@ import static com.share.common.constants.Constant.DATA_FIELD_NAME_UPDATER;
  * @date 2026/3/7 16:12
  */
 public class BaseMetaObjectHandler implements MetaObjectHandler {
+
+    /**
+     * 插入填充
+     * @param metaObject 元对象
+     */
     @Override
     public void insertFill(MetaObject metaObject) {
         //创建人
@@ -24,18 +29,30 @@ public class BaseMetaObjectHandler implements MetaObjectHandler {
         setUpdater(metaObject);
     }
 
+    /**
+     * 更新填充
+     * @param metaObject 元对象
+     */
     @Override
     public void updateFill(MetaObject metaObject) {
         //更新数据时，修改更新人
         setUpdater(metaObject);
     }
 
+    /**
+     * 设置创建人
+     * @param metaObject 元对象
+     */
     private void setCreater(MetaObject metaObject) {
         Long userId = UserContext.getUser();
         //未找到用户id默认0
         this.strictInsertFill(metaObject, DATA_FIELD_NAME_CREATER, Long.class, NumberUtils.null2Zero(userId)); // 起始版本 3.3.0(推荐使用)
     }
 
+    /**
+     * 设置更新人
+     * @param metaObject 元对象
+     */
     private void setUpdater(MetaObject metaObject) {
         Long userId = UserContext.getUser();
         //未找到用户id默认0

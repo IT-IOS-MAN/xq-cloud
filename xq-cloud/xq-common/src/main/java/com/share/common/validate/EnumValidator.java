@@ -19,12 +19,22 @@ public class EnumValidator implements ConstraintValidator<EnumValid, BaseEnum> {
 
     private int[] enums = null;
 
+    /**
+     * 初始化校验器
+     * @param enumValid 枚举校验注解
+     */
     @Override
     public void initialize(EnumValid enumValid) {
         this.enums = enumValid.enumeration();
         log.info("payload>>{}", ArrayUtils.toString(enumValid.payload()));
     }
 
+    /**
+     * 校验逻辑
+     * @param em 枚举值
+     * @param context 校验上下文
+     * @return 校验结果
+     */
     @Override
     public boolean isValid(BaseEnum em, ConstraintValidatorContext context) {
         // 不做空校验

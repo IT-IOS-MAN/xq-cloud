@@ -10,12 +10,12 @@ import java.time.temporal.TemporalAccessor;
  * @description:
  * @date 2026/3/7 16:12
  */
-public class TjTemporalConverter extends TemporalAccessorConverter {
-    public TjTemporalConverter(Class<?> targetType) {
+public class XqTemporalConverter extends TemporalAccessorConverter {
+    public XqTemporalConverter(Class<?> targetType) {
         super(targetType);
     }
 
-    public TjTemporalConverter(Class<?> targetType, String format) {
+    public XqTemporalConverter(Class<?> targetType, String format) {
         super(targetType, format);
     }
 

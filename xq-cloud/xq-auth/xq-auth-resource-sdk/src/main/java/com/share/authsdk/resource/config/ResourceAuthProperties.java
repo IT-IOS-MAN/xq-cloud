@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: 资源服务器认证配置
  * @date 2026/3/7 16:08
  */
 @Data

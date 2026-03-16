@@ -17,6 +17,14 @@ import javax.servlet.http.HttpServletResponse;
 @Slf4j
 public class UserInfoInterceptor implements HandlerInterceptor {
 
+    /**
+     * 用户信息拦截器
+     * @param request 请求
+     * @param response 响应
+     * @param handler 处理器
+     * @return
+     * @throws Exception
+     */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // 1.尝试获取头信息中的用户信息
@@ -36,6 +44,14 @@ public class UserInfoInterceptor implements HandlerInterceptor {
         }
     }
 
+    /**
+     * 用户信息拦截器
+     * @param request 请求
+     * @param response 响应
+     * @param handler 处理器
+     * @param ex 异常
+     * @throws Exception
+     */
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
         // 清理用户信息

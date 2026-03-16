@@ -5,7 +5,7 @@ import cn.hutool.core.util.EnumUtil;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: 枚举工具类 继承 cn.hutool.core.util
  * @date 2026/3/7 16:12
  */
 public class EnumUtils extends EnumUtil {

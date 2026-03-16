@@ -21,12 +21,21 @@ import java.security.KeyPair;
 @EnableConfigurationProperties(KeyProperties.class)
 public class AuthConfig {
 
+    /**
+     * 秘钥配置
+     * @return
+     */
     @Bean
     @ConfigurationProperties(prefix = "encrypt")
     public KeyProperties keyProperties(){
         return new KeyProperties();
     }
 
+    /**
+     * 秘钥对
+     * @param keyProperties
+     * @return
+     */
     @Bean
     public KeyPair keyPair(KeyProperties keyProperties){
         // 获取秘钥工厂
@@ -40,6 +49,10 @@ public class AuthConfig {
                 keyProperties.getKeyStore().getSecret().toCharArray());
     }
 
+    /**
+     * 设置cookie处理器
+     * @return
+     */
     @Bean
     public TomcatContextCustomizer cookieTomcatContextCustomizer(){
         return context -> context.setCookieProcessor(new LegacyCookieProcessor());

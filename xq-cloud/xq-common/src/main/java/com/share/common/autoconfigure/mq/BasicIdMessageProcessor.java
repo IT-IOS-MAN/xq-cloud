@@ -11,10 +11,17 @@ import static com.share.common.constants.Constant.REQUEST_ID_HEADER;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: 消息处理器
  * @date 2026/3/8 1:07
  */
 public class BasicIdMessageProcessor implements MessagePostProcessor {
+
+    /**
+     * 消息处理器
+     * @param message 消息
+     * @return 消息
+     * @throws AmqpException 异常
+     */
     @Override
     public Message postProcessMessage(Message message) throws AmqpException {
         String requestId = MDC.get(REQUEST_ID_HEADER);

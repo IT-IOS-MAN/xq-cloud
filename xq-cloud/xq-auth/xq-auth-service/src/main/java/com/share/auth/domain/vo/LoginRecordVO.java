@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 /**
  * @author xq-cloud
  * @version 1.0
- * @description:
+ * @description: 登录记录VO
  * @date 2026/3/7 16:54
  */
 @Data

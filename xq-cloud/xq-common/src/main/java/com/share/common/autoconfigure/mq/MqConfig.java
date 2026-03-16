@@ -31,16 +31,30 @@ import static com.share.common.constants.MqConstants.Queue.ERROR_QUEUE_TEMPLATE;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: mq配置
  * @date 2026/3/8 1:08
  */
 @Configuration
 @ConditionalOnClass(value = {MessageConverter.class, AmqpTemplate.class})
 public class MqConfig implements EnvironmentAware {
 
+    /**
+     * 默认错误路由key
+     */
     private String defaultErrorRoutingKey;
+
+    /**
+     * 默认错误队列
+     */
     private String defaultErrorQueue;
 
+    /**
+     * 简单消息监听器容器工厂
+     * @param configurer 简单消息监听器容器工厂配置器
+     * @param connectionFactory 连接工厂
+     * @param simpleContainerCustomizer 简单消息监听器容器自定义器
+     * @return 简单消息监听器容器工厂
+     */
     @Bean(name = "rabbitListenerContainerFactory")
     @ConditionalOnProperty(prefix = "spring.rabbitmq.listener", name = "type", havingValue = "simple",
             matchIfMissing = true)
@@ -60,6 +74,11 @@ public class MqConfig implements EnvironmentAware {
         return factory;
     }
 
+    /**
+     * 消息转换器
+     * @param mapper 对象映射器
+     * @return 消息转换器
+     */
     @Bean
     public MessageConverter messageConverter(ObjectMapper mapper){
         // 1.定义消息转换器
@@ -101,16 +120,26 @@ public class MqConfig implements EnvironmentAware {
         return new DirectExchange(ERROR_EXCHANGE);
     }
 
+    /**
+     * 专门接收处理失败的消息队列
+     */
     @Bean
     public Queue errorQueue(){
         return new Queue(defaultErrorQueue, true);
     }
 
+    /**
+     * 专门接收处理失败的消息队列绑定到错误交换机
+     */
     @Bean
     public Binding errorBinding(Queue errorQueue, DirectExchange errorMessageExchange){
         return BindingBuilder.bind(errorQueue).to(errorMessageExchange).with(defaultErrorRoutingKey);
     }
 
+    /**
+     * 设置环境
+     * @param environment 环境
+     */
     @Override
     public void setEnvironment(Environment environment) {
         String appName = environment.getProperty("spring.application.name");

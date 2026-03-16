@@ -26,7 +26,7 @@ import java.util.regex.Pattern;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: 分布式锁切面
  * @date 2026/3/8 1:12
  */
 @Aspect

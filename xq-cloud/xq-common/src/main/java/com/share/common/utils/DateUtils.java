@@ -93,35 +93,68 @@ public class DateUtils extends LocalDateTimeUtil {
         return LocalDateTime.of(localDateTime.toLocalDate(), LocalTime.MAX);
     }
 
+    /**
+     * 获取当前添加指定天数时间
+     * @param i 天数
+     * @return 当前时间
+     */
     public static Date addDays(int i) {
         Calendar c = Calendar.getInstance(TimeZone.getTimeZone(TIME_ZONE_8));
         c.add(Calendar.DAY_OF_MONTH, i);
         return c.getTime();
     }
 
-
-
+    /**
+     * 获取指定日期所在月份的开始时间
+     * @param date 指定日期
+     * @return 指定日期所在月份的开始时间
+     */
     public static LocalDate getMonthBegin(LocalDate date) {
         return LocalDate.of(date.getYear(), date.getMonth(), 1);
     }
 
+    /**
+     * 获取指定日期所在月份的最后一天
+     * @param date 指定日期
+     * @return 指定日期所在月份的最后一天
+     */
     public static LocalDate getMonthEnd(LocalDate date) {
         return LocalDate.of(date.getYear(), date.getMonthValue() + 1, 1).minusDays(1);
     }
 
+    /**
+     * 获取指定日期所在月份的开始时间
+     * @param date 指定日期
+     * @return 指定日期所在月份的开始时间
+     */
     public static LocalDateTime getMonthBeginTime(LocalDate date) {
         return LocalDate.of(date.getYear(), date.getMonth(), 1).atStartOfDay();
     }
 
+    /**
+     * 获取指定日期所在月份的最后一天
+     * @param date 指定日期
+     * @return 指定日期所在月份的最后一天
+     */
     public static LocalDateTime getMonthEndTime(LocalDate date) {
         return LocalDate.of(date.getYear(), date.getMonthValue() + 1, 1)
                 .minusDays(1).atTime(LocalTime.MAX);
     }
 
+    /**
+     * 获取指定日期所在周的开始时间
+     * @param now 指定日期
+     * @return 指定日期所在周的开始时间
+     */
     public static LocalDateTime getWeekBeginTime(LocalDate now) {
         return now.minusDays(now.getDayOfWeek().getValue() - 1).atStartOfDay();
     }
 
+    /**
+     * 获取指定日期所在周的结束时间
+     * @param now 指定日期
+     * @return 指定日期所在周的结束时间
+     */
     public static LocalDateTime getWeekEndTime(LocalDate now) {
         return LocalDateTime.of(now.plusDays(8 - now.getDayOfWeek().getValue()), LocalTime.MAX);
     }
@@ -132,10 +165,19 @@ public class DateUtils extends LocalDateTimeUtil {
      * @return
      */
     public static List<String> last15Day(){
+        return lastDay(15);
+    }
+
+    /**
+     * 获取最近指定天天数日期（不包含当天），格式MM.dd
+     * @param i 天数
+     * @return 日期列表
+     */
+    public static List<String> lastDay(int i){
         // 1.定义日期列表
         List<String> days = new ArrayList<>();
         // 2.获取15天前的时间
-        LocalDateTime time = now().minusDays(15);
+        LocalDateTime time = now().minusDays(i);
         // 3.for循环遍历
         for (int count = 0; count < 15; count++){
             // 3.1.格式化时间

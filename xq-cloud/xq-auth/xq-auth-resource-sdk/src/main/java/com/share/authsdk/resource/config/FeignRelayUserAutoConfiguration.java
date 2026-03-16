@@ -16,6 +16,10 @@ import org.springframework.context.annotation.Configuration;
 @ConditionalOnClass(Feign.class)
 public class FeignRelayUserAutoConfiguration {
 
+    /**
+     * feign拦截器
+     * @return
+     */
     @Bean
     public FeignRelayUserInterceptor feignRelayUserInterceptor(){
         return new FeignRelayUserInterceptor();

@@ -8,7 +8,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 /**
  * @author xq-cloud
  * @version 1.0
- * @description:
+ * @description: 安全配置
  * @date 2026/3/7 19:35
  */
 @Configuration

@@ -27,13 +27,19 @@ import static com.share.common.constants.ErrorInfo.Msg.SERVER_INTER_ERROR;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: 网关异常处理器
  * @date 2026/3/7 15:55
  */
 @Slf4j
 @Component
 public class GatewayExceptionHandler implements ErrorWebExceptionHandler, Ordered {
 
+    /**
+     * 处理异常
+     * @param exchange 交换器
+     * @param ex 异常
+     * @return 处理结果
+     */
     @Override
     public Mono<Void> handle(ServerWebExchange exchange, Throwable ex) {
         // 1.获取响应
@@ -79,6 +85,11 @@ public class GatewayExceptionHandler implements ErrorWebExceptionHandler, Ordere
                 ));
     }
 
+    /**
+     * 记录日志
+     * @param exchange 交换器
+     * @param ex 异常
+     */
     private void writeLog(ServerWebExchange exchange, Throwable ex) {
         ServerHttpRequest request = exchange.getRequest();
         URI uri = request.getURI();
@@ -88,6 +99,10 @@ public class GatewayExceptionHandler implements ErrorWebExceptionHandler, Ordere
                 host, port, request.getPath(), ex);
     }
 
+    /**
+     * 获取优先级
+     * @return 优先级
+     */
     @Override
     public int getOrder() {
         return HIGHEST_PRECEDENCE;

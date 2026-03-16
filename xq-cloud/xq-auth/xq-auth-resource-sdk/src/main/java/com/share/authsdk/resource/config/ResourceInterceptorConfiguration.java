@@ -20,13 +20,24 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableConfigurationProperties(ResourceAuthProperties.class)
 public class ResourceInterceptorConfiguration implements WebMvcConfigurer {
 
+    /**
+     * 资源服务器认证配置
+     */
     private final ResourceAuthProperties authProperties;
 
+    /**
+     * 资源服务器认证配置
+     * @param resourceAuthProperties
+     */
     @Autowired
     public ResourceInterceptorConfiguration(ResourceAuthProperties resourceAuthProperties) {
         this.authProperties = resourceAuthProperties;
     }
 
+    /**
+     * 添加拦截器
+     * @param registry
+     */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         // 1.添加用户信息拦截器

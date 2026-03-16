@@ -7,7 +7,7 @@ import org.redisson.api.RLock;
 /**
  * @author xq-cloud
  * @version 1.0
- * @description:
+ * @description: 锁策略
  * @date 2026/3/8 1:13
  */
 public enum LockStrategy {

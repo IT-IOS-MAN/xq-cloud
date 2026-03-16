@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * @author xq-cloud
  * @version 1.0
- * @description:
+ * @description: 菜单选项VO
  * @date 2026/3/7 16:55
  */
 @Data

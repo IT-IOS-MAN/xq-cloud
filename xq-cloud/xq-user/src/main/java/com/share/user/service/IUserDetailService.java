@@ -17,9 +17,25 @@ import java.util.List;
  */
 public interface IUserDetailService extends IService<UserDetail> {
 
+    /**
+     * 根据用户ID查询用户详情
+     * @param userId 用户ID
+     * @return 用户详情
+     */
     UserDetail queryById(Long userId);
 
+    /**
+     * 根据用户ids批量查询用户详情
+     * @param ids 用户ID列表
+     * @return 用户详情列表
+     */
     List<UserDetail> queryByIds(List<Long> ids);
 
+    /**
+     * 分页查询用户详情
+     * @param querySO 分页查询参数
+     * @param type 用户类型
+     * @return 分页查询结果
+     */
     Page<UserDetail> queryUserDetailByPage(PageSO<UserPageSO> querySO, UserType type);
 }

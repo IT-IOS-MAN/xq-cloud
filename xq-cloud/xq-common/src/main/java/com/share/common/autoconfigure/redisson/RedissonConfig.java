@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: Redisson配置
  * @date 2026/3/8 1:10
  */
 @Slf4j
@@ -29,15 +29,33 @@ import java.util.List;
 @Configuration
 @EnableConfigurationProperties(RedisProperties.class)
 public class RedissonConfig {
+
+    /**
+     * 协议前缀  Redis 服务时‌不使用加密
+     */
     private static final String REDIS_PROTOCOL_PREFIX = "redis://";
+
+    /**
+     * 协议前缀  Redis 服务时‌启用 SSL/TLS 加密
+     */
     private static final String REDISS_PROTOCOL_PREFIX = "rediss://";
 
+    /**
+     * 分布式锁切面
+     * @param redissonClient redisson客户端
+     * @return 分布式锁切面
+     */
     @Bean
     @ConditionalOnMissingBean
     public LockAspect lockAspect(RedissonClient redissonClient){
         return new LockAspect(redissonClient);
     }
 
+    /**
+     * 初始化Redisson客户端
+     * @param properties Redis配置
+     * @return Redisson客户端
+     */
     @Bean
     @ConditionalOnMissingBean
     public RedissonClient redissonClient(RedisProperties properties){
@@ -79,6 +97,11 @@ public class RedissonConfig {
         return Redisson.create(config);
     }
 
+    /**
+     * 转换节点地址
+     * @param nodesObject 节点地址列表
+     * @return 转换后的节点地址列表
+     */
     private String[] convert(List<String> nodesObject) {
         List<String> nodes = new ArrayList<>(nodesObject.size());
         for (String node : nodesObject) {

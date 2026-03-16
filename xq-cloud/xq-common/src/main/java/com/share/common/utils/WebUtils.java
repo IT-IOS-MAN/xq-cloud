@@ -76,21 +76,36 @@ public class WebUtils {
         response.setHeader(key, value);
     }
 
-
+    /**
+     * 获取请求id
+     * @return 请求id
+     */
     public static String getRequestId() {
         return getHeader(Constant.REQUEST_ID_HEADER);
     }
 
+    /**
+     * 是否是网关请求
+     * @return 是否是网关请求
+     */
     public static boolean isGatewayRequest() {
         String originName = getHeader(Constant.REQUEST_FROM_HEADER);
         return Constant.GATEWAY_ORIGIN_NAME.equals(originName);
     }
 
+    /**
+     * 是否是feign请求
+     * @return 是否是feign请求
+     */
     public static boolean isFeignRequest() {
         String originName = getHeader(Constant.REQUEST_FROM_HEADER);
         return Constant.FEIGN_ORIGIN_NAME.equals(originName);
     }
 
+    /**
+     * 是否是成功请求
+     * @return 是否是成功请求
+     */
     public static boolean isSuccess() {
         HttpServletResponse response = getResponse();
         return response != null && response.getStatus() < 300;
@@ -156,6 +171,10 @@ public class WebUtils {
         return uri.substring(uri.indexOf("/"), endIndex);
     }
 
+    /**
+     * 获取请求ip
+     * @return
+     */
     public static String getRemoteAddr() {
         HttpServletRequest request = getRequest();
         if (request == null) {
@@ -164,6 +183,10 @@ public class WebUtils {
         return request.getRemoteAddr();
     }
 
+    /**
+     * 获取cookie
+     * @return
+     */
     public static CookieBuilder cookieBuilder(){
         return new CookieBuilder(getRequest(), getResponse());
     }

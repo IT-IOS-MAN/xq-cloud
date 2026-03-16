@@ -24,28 +24,52 @@ import static com.github.xiaoymin.knife4j.spring.util.TypeUtils.isVoid;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: swagger响应结果封装
  * @date 2026/3/7 16:12
  */
 public class BaseSwaggerResponseBuilderPlugin implements OperationBuilderPlugin, Ordered {
 
+    /**
+     * 类型解析器
+     */
     @Autowired
     private TypeResolver typeResolver;
+
+    /**
+     * 文档插件管理器
+     */
     @Autowired
     private DocumentationPluginsManager documentationPlugins;
+
+    /**
+     * 模型规范工厂
+     */
     @Autowired
     private ModelSpecificationFactory modelSpecifications;
 
+    /**
+     * 支持的文档类型
+     * @param documentationType 文档类型
+     * @return 是否支持
+     */
     @Override
     public boolean supports(DocumentationType documentationType) {
         return true;
     }
 
+    /**
+     * 获取执行顺序
+     * @return 执行顺序
+     */
     @Override
     public int getOrder() {
         return Ordered.HIGHEST_PRECEDENCE+13;
     }
 
+    /**
+     * 处理操作
+     * @param context 上下文
+     */
     @Override
     public void apply(OperationContext context) {
         // 1.处理返回值类型
@@ -73,6 +97,11 @@ public class BaseSwaggerResponseBuilderPlugin implements OperationBuilderPlugin,
                 .responses(CollUtils.singletonList(documentationPlugins.response(responseContext)));
     }
 
+    /**
+     * 获取消息
+     * @param context 上下文
+     * @return 消息
+     */
     public static String message(OperationContext context) {
         Optional<ResponseStatus> responseStatus = context.findAnnotation(ResponseStatus.class);
         String reasonPhrase = HttpStatus.OK.getReasonPhrase();

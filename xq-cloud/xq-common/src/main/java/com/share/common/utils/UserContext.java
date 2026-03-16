@@ -7,6 +7,10 @@ package com.share.common.utils;
  * @date 2026/3/7 16:12
  */
 public class UserContext {
+    /**
+     * 用户id
+     * 每个线程都拥有自己独立的变量副本
+     */
     private static final ThreadLocal<Long> TL = new ThreadLocal<>();
 
     /**

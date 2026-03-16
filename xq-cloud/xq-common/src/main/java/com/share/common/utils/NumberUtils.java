@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: 数字工具类 继承 cn.hutool.core.util.NumberUtil
  * @date 2026/3/7 16:12
  */
 public class NumberUtils extends NumberUtil {
@@ -79,6 +79,11 @@ public class NumberUtils extends NumberUtil {
         return div(num1, num2, scale).doubleValue();
     }
 
+    /**
+     * 获取 List<Double> 最中的大值
+     * @param data 数据
+     * @return 最大值
+     */
     public static  Double max(List<Double> data){
         if(CollUtils.isEmpty(data)){
             return null;
@@ -87,6 +92,12 @@ public class NumberUtils extends NumberUtil {
                 .max(Comparator.comparingDouble(num -> num))
                 .orElse(0d);
     }
+
+    /**
+     * 获取 List<Double> 最小的值
+     * @param data 数据
+     * @return 最小值
+     */
     public static  Double min(List<Double> data){
         if(CollUtils.isEmpty(data)){
             return null;
@@ -96,6 +107,11 @@ public class NumberUtils extends NumberUtil {
                 .orElse(0d);
     }
 
+    /**
+     * 获取 List<Double> 的平均值
+     * @param data 数据
+     * @return 平均值
+     */
     public static Double average(List<Double> data){
         if(CollUtils.isEmpty(data)){
             return 0d;
@@ -105,6 +121,11 @@ public class NumberUtils extends NumberUtil {
 
     }
 
+    /**
+     * 将对象转换为整数
+     * @param obj 对象
+     * @return 整数
+     */
     public static Integer toInt(Object obj) {
         return obj == null ? null
                 : obj instanceof Integer
@@ -137,7 +158,12 @@ public class NumberUtils extends NumberUtil {
         return number.toString();
     }
 
-
+    /**
+     * 将数字转换为指定小数位数的字符串
+     * @param num 数字
+     * @param offset 小数位数
+     * @return 字符串
+     */
     public static String scaleToStr(Integer num, int offset) {
         // 1.计算位数
         int m = (int) Math.pow(10, offset);

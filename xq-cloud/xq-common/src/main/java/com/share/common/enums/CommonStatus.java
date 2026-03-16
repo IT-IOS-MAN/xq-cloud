@@ -3,7 +3,7 @@ package com.share.common.enums;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: 通用状态枚举
  * @date 2026/3/7 16:12
  */
 import lombok.AllArgsConstructor;
@@ -18,6 +18,11 @@ public enum CommonStatus implements BaseEnum{
     private final int value;
     private final String desc;
 
+    /**
+     * 根据value获取枚举
+     * @param value
+     * @return
+     */
     public static CommonStatus of(Integer value) {
         if (value == null) {
             return null;
@@ -30,6 +35,11 @@ public enum CommonStatus implements BaseEnum{
         return null;
     }
 
+    /**
+     * 根据value获取描述
+     * @param value
+     * @return
+     */
     public static String desc(Integer value) {
         CommonStatus status = of(value);
         return status.getDesc();

@@ -13,12 +13,21 @@ import java.io.IOException;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: 请求ID过滤器
  * @date 2026/3/7 16:12
  */
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @WebFilter(filterName = "requestIdFilter", urlPatterns = "/**")
 public class RequestIdFilter implements Filter {
+
+    /**
+     * 过滤器
+     * @param servletRequest 请求
+     * @param servletResponse 响应
+     * @param filterChain 过滤器链
+     * @throws IOException
+     * @throws ServletException
+     */
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         // 1.获取request

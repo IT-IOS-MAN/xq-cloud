@@ -5,7 +5,7 @@ import cn.hutool.core.lang.RegexPool;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: 正则常量
  * @date 2026/3/7 16:12
  */
 public interface RegexConstants extends RegexPool {

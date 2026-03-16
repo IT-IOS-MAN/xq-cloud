@@ -15,23 +15,74 @@ import java.nio.charset.StandardCharsets;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: cookie 构建器
  * @date 2026/3/7 16:12
  */
 @Slf4j
 @Data
 @Accessors(chain = true, fluent = true)
 public class CookieBuilder {
+
+    /**
+     * 默认的cookie编码
+     */
     private Charset charset = StandardCharsets.UTF_8;
+
+    /**
+     * 默认的cookie过期时间
+     */
     private int maxAge = -1;
+
+    /**
+     * 默认的cookie路径
+     */
     private String path = "/";
+
+    /**
+     * 是否只允许http访问
+     */
     private boolean httpOnly;
+
+    /**
+     * 是否只允许https访问
+     */
+    private boolean secure;
+
+    /**
+     * 是否允许跨域访问
+     */
+    private boolean sameSite;
+
+    /**
+     * 是否允许跨域访问
+     */
     private String name;
+
+    /**
+     * 值
+     */
     private String value;
+
+    /**
+     * 域名
+     */
     private String domain;
+
+    /**
+     * 请求
+     */
     private final HttpServletRequest request;
+
+    /**
+     * 响应
+     */
     private final HttpServletResponse response;
 
+    /**
+     * 构造函数
+     * @param request 请求
+     * @param response 响应
+     */
     public CookieBuilder(HttpServletRequest request, HttpServletResponse response) {
         this.request = request;
         this.response = response;

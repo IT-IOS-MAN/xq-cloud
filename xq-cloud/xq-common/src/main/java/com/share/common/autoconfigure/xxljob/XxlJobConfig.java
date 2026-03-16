@@ -11,7 +11,8 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: xxl-job配置
+ * @see XxlJobProperties
  * @date 2026/3/8 1:16
  */
 @Slf4j
@@ -20,6 +21,11 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(XxlJobProperties.class)
 public class XxlJobConfig {
 
+    /**
+     * xxl-job执行器
+     * @param prop xxl-job配置
+     * @return xxl-job执行器
+     */
     @Bean
     public XxlJobSpringExecutor xxlJobExecutor(XxlJobProperties prop) {
         log.info(">>>>>>>>>>> xxl-job config init.");

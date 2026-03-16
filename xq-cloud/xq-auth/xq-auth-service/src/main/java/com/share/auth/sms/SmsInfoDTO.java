@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: 短信发送参数
  * @date 2026/3/7 16:24
  */
 @Data

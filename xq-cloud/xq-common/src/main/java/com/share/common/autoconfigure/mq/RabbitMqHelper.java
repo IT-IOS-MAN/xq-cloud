@@ -23,10 +23,25 @@ import static com.share.common.constants.Constant.REQUEST_ID_HEADER;
 @Slf4j
 public class RabbitMqHelper {
 
+    /**
+     * 消息模板
+     */
     private final RabbitTemplate rabbitTemplate;
+
+    /**
+     * 消息处理器
+     */
     private final MessagePostProcessor processor = new BasicIdMessageProcessor();
+
+    /**
+     * 线程池
+     */
     private final ThreadPoolTaskExecutor executor;
 
+    /**
+     * 构造函数
+     * @param rabbitTemplate 消息模板
+     */
     public RabbitMqHelper(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
         executor = new ThreadPoolTaskExecutor();

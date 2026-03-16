@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: DTO基础属性
  * @date 2026/3/7 16:12
  */
 @ApiModel(description = "DTO基础属性")

@@ -21,20 +21,36 @@ import static com.share.auth.common.constants.JwtConstants.AUTH_PRIVILEGE_VERSIO
 /**
  * @author xq-cloud
  * @version 1.0
- * @description:  鉴权缓存类
+ * @description: 鉴权缓存类
  * @date 2026/3/7 16:42
  */
 @Slf4j
 @Component
 public class PrivilegeCache {
+
+    /**
+     * 权限缓存
+     */
     private final BoundHashOperations<String, String, String> hashOps;
+
+    /**
+     * 字符串redis模板
+     */
     private final StringRedisTemplate stringRedisTemplate;
 
+    /**
+     * 构造函数
+     * @param stringRedisTemplate 字符串redis模板
+     */
     public PrivilegeCache(StringRedisTemplate stringRedisTemplate) {
         this.stringRedisTemplate = stringRedisTemplate;
         this.hashOps = stringRedisTemplate.boundHashOps(AUTH_PRIVILEGE_KEY);
     }
 
+    /**
+     * 初始化权限缓存
+     * @param list 权限角色DTO列表
+     */
     public void initPrivilegesCache(List<PrivilegeRoleDTO> list) {
         // 1.组装权限对应角色
         Map<String, String> map = new HashMap<>();
@@ -47,6 +63,11 @@ public class PrivilegeCache {
         incrementVersion();
     }
 
+    /**
+     * 缓存单个权限
+     * @param p 权限
+     * @param roleIds 角色id列表
+     */
     public void cacheSinglePrivilege(Privilege p, Set<Long> roleIds) {
         try {
             PrivilegeRoleDTO privilegeRoleDTO = new PrivilegeRoleDTO();
@@ -62,21 +83,35 @@ public class PrivilegeCache {
         }
     }
 
+    /**
+     * 移除权限缓存
+     * @param id 权限id
+     */
     public void removePrivilegeCacheById(Long id) {
         hashOps.delete(id);
         incrementVersion();
     }
 
+    /**
+     * 批量移除权限缓存
+     * @param ids 权限id列表
+     */
     public void removePrivilegeCacheByIds(List<Long> ids) {
         hashOps.delete(ids.toArray());
         incrementVersion();
     }
 
-
+    /**
+     * 递增权限版本
+     */
     private void incrementVersion() {
         stringRedisTemplate.opsForValue().increment(AUTH_PRIVILEGE_VERSION_KEY, 1);
     }
 
+    /**
+     * 移除角色id对应的权限缓存
+     * @param id 角色id
+     */
     public void removeCacheByRoleId(Long id) {
         // 查询出所有权限信息
         Map<String, String> cacheMap = hashOps.entries();

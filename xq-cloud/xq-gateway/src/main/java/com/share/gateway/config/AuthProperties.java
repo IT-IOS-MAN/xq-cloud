@@ -18,8 +18,14 @@ import java.util.Set;
 @ConfigurationProperties(prefix = "xq.auth")
 public class AuthProperties implements InitializingBean {
 
+    /**
+     * 不拦截的路径
+     */
     private Set<String> excludePath;
 
+    /**
+     * 不拦截的路径
+     */
     @Override
     public void afterPropertiesSet() throws Exception {
 

@@ -10,12 +10,20 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: 登录认证拦截器
  * @date 2026/3/7 16:06
  */
 @Slf4j
 public class LoginAuthInterceptor implements HandlerInterceptor {
 
+    /**
+     * 登录认证拦截器
+     * @param request 请求
+     * @param response 响应
+     * @param handler 处理器
+     * @return
+     * @throws Exception
+     */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // 1.尝试获取用户信息

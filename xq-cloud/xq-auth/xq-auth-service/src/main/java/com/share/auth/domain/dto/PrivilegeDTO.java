@@ -11,7 +11,7 @@ import java.io.Serializable;
 /**
  * @author xq-cloud
  * @version 1.0
- * @description:
+ * @description: 权限表单实体
  * @date 2026/3/7 16:51
  */
 @Data

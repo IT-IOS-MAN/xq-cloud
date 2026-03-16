@@ -31,6 +31,11 @@ public class MybatisConfig {
         return new BaseMetaObjectHandler();
     }
 
+    /**
+     * 自定义拦截器
+     * @param innerInterceptor 动态表名拦截器
+     * @return 拦截器
+     */
     @Bean
     @ConditionalOnMissingBean
     public MybatisPlusInterceptor mybatisPlusInterceptor(@Autowired(required = false) DynamicTableNameInnerInterceptor innerInterceptor) {

@@ -5,7 +5,7 @@ import cn.hutool.json.JSONUtil;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: json工具类 继承 cn.hutool.json.JSONUtil
  * @date 2026/3/7 16:12
  */
 public class JsonUtils extends JSONUtil {

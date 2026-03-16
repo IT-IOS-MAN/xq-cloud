@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: id和name键值对
  * @date 2026/3/7 16:12
  */
 @Data

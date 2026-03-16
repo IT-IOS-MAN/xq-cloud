@@ -46,6 +46,15 @@ public class BeanUtils extends BeanUtil {
         return toBean(source, clazz);
     }
 
+    /**
+     * 将原对象转换成目标对象，对于字段不匹配的字段可以使用转换器处理
+     *
+     * @param list  原对象列表
+     * @param clazz 目标对象的class
+     * @param <R>   原对象类型
+     * @param <T>   目标对象类型
+     * @return 目标对象列表
+     */
     public static <R, T> List<T> copyList(List<R> list, Class<T> clazz) {
         if (list == null || list.size() == 0) {
             return CollUtils.emptyList();

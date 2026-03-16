@@ -8,7 +8,7 @@ import lombok.Getter;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: 用户状态
  * @date 2026/3/8 0:19
  */
 @Getter

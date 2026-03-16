@@ -5,7 +5,7 @@ import cn.hutool.core.util.ReflectUtil;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: 反射工具类 继承 cn.hutool.core.util.ReflectUtil
  * @date 2026/3/7 16:12
  */
 public class ReflectUtils extends ReflectUtil {

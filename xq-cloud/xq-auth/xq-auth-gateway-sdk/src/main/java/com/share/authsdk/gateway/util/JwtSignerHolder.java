@@ -33,14 +33,26 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class JwtSignerHolder {
 
+    /**
+     * jwt签名器
+     */
     private volatile JWTSigner jwtSigner;
 
+    /**
+     * 服务发现客户端
+     */
     private DiscoveryClient discoveryClient;
 
+    /**
+     * 线程池
+     */
     public JwtSignerHolder(DiscoveryClient discoveryClient) {
         this.discoveryClient = discoveryClient;
     }
 
+    /**
+     * 线程池
+     */
     private final ExecutorService ses = new ThreadPoolExecutor(
             1,
             1,
@@ -50,16 +62,27 @@ public class JwtSignerHolder {
             r -> new Thread(r, "AuthFetchJwkThread")
     );
 
+    /**
+     * 初始化
+     */
     @PostConstruct
     public void init(){
         // 尝试获取jwk秘钥
         ses.submit(new MarkedRunnable(new JwkTask(discoveryClient)));
     }
 
+    /**
+     * 销毁
+     */
     public void shutdown(){
         ses.shutdown();
         log.debug("销毁加载秘钥线程 AuthFetchJwkThread");
     }
+
+    /**
+     * 休眠
+     * @param time
+     */
     public static void sleep(long time){
         try {
             Thread.sleep(time);
@@ -67,13 +90,28 @@ public class JwtSignerHolder {
             e.printStackTrace();
         }
     }
+
+    /**
+     * 获取jwk秘钥任务
+     */
     class JwkTask implements Runnable{
+
+        /**
+         * 服务发现客户端
+         */
         private final DiscoveryClient discoveryClient;
 
+        /**
+         * 构造方法
+         * @param discoveryClient
+         */
         public JwkTask(DiscoveryClient discoveryClient) {
             this.discoveryClient = discoveryClient;
         }
 
+        /**
+         * 运行
+         */
         @Override
         public void run() {
             while (jwtSigner == null) {

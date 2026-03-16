@@ -3,7 +3,7 @@ package com.share.user.constants;
 /**
  * @author xq-cloud
  * @version 1.0
- * @description:
+ * @description: 用户错误信息
  * @date 2026/3/7 19:36
  */
 public interface UserErrorInfo {

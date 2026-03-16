@@ -14,6 +14,11 @@ import java.util.stream.Collectors;
  */
 public class ViolationUtils {
 
+    /**
+     * 处理校验结果
+     * @param violations 校验结果
+     * @param <T> 校验对象类型
+     */
     public static <T> void process(Set<ConstraintViolation<T>> violations) {
         if(CollUtils.isEmpty(violations)){
             return;

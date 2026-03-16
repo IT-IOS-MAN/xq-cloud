@@ -10,7 +10,7 @@ import java.io.Serializable;
 /**
  * @author xq-cloud
  * @version 1.0
- * @description:
+ * @description: 权限选项VO
  * @date 2026/3/7 16:55
  */
 @Data

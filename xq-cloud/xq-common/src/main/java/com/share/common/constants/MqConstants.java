@@ -3,10 +3,14 @@ package com.share.common.constants;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: MQ常量
  * @date 2026/3/7 16:12
  */
 public interface MqConstants {
+
+    /**
+     * 交换机
+     */
     interface Exchange{
         /*课程有关的交换机*/
         String COURSE_EXCHANGE = "course.topic";
@@ -34,6 +38,10 @@ public interface MqConstants {
         /*优惠促销有关的交换机*/
         String PROMOTION_EXCHANGE = "promotion.topic";
     }
+
+    /**
+     * 队列
+     */
     interface Queue {
         String ERROR_QUEUE_TEMPLATE = "error.{}.queue";
     }

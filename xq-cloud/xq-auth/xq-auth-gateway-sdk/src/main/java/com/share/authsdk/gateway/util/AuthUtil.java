@@ -43,17 +43,42 @@ public class AuthUtil {
     // 权限版本信息，减少不必要的缓存处理
     private int privilegeVersion;
 
+    /**
+     * 路径匹配器
+     */
     private final AntPathMatcher antPathMatcher = new AntPathMatcher();
+
+    /**
+     * jwt签名器
+     */
     private final JwtSignerHolder jwtSignerHolder;
+
+    /**
+     * 字符串redis
+     */
     private final StringRedisTemplate stringRedisTemplate;
+
+    /**
+     * 权限hash操作
+     */
     private final BoundHashOperations<String, String, String> hashOps;
 
+    /**
+     * 构造方法
+     * @param jwtSignerHolder
+     * @param stringRedisTemplate
+     */
     public AuthUtil(JwtSignerHolder jwtSignerHolder, StringRedisTemplate stringRedisTemplate) {
         this.jwtSignerHolder = jwtSignerHolder;
         this.stringRedisTemplate = stringRedisTemplate;
         this.hashOps = stringRedisTemplate.boundHashOps(AUTH_PRIVILEGE_KEY);
     }
 
+    /**
+     * 解析token
+     * @param token
+     * @return
+     */
     public R<LoginUserDTO> parseToken(String token) {
         // 1.校验token是否为空
         if(StringUtils.isBlank(token)){
@@ -96,6 +121,11 @@ public class AuthUtil {
         return R.ok(userDTO);
     }
 
+    /**
+     * 检查权限
+     * @param antPath
+     * @param r
+     */
     public void checkAuth(String antPath, R<LoginUserDTO> r){
         // 1.判断是否是需要权限的路径
         String matchPath = findMatchPath(antPath);
@@ -119,9 +149,15 @@ public class AuthUtil {
         }
     }
 
+    /**
+     * 查找匹配的路径
+     * @param antPath
+     * @return
+     */
     private String findMatchPath(String antPath){
         String matchPath = null;
         for (String pathPattern : paths) {
+            // 匹配路径
             if(antPathMatcher.match(pathPattern, antPath)){
                 matchPath = pathPattern;
                 break;
@@ -130,10 +166,19 @@ public class AuthUtil {
         return matchPath;
     }
 
+    /**
+     * 查找路径权限
+     * @param path
+     * @return
+     */
     private PrivilegeRoleDTO findPathPrivilege(String path){
         return privileges.get(path);
     }
 
+    /**
+     * 加载权限信息
+     * @return
+     */
     private List<PrivilegeRoleDTO> loadPrivileges(){
         List<String> values = hashOps.values();
         if(CollUtil.isEmpty(values)){
@@ -144,6 +189,10 @@ public class AuthUtil {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * 获取当前权限版本
+     * @return
+     */
     private int currentVersion() {
         String version = stringRedisTemplate.opsForValue().get(AUTH_PRIVILEGE_VERSION_KEY);
         if(StrUtil.isEmpty(version)){
@@ -153,6 +202,9 @@ public class AuthUtil {
     }
 
 
+    /**
+     * 刷新权限信息
+     */
     @Scheduled(fixedDelay = 20000)
     public void refreshTask(){
         // 1.获取版本号
