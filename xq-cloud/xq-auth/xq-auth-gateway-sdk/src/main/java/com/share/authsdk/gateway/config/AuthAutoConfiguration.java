@@ -11,7 +11,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 /**
  * @author xq-cloud
  * @version 1.0.0
- * @description:
+ * @description: 认证自动配置
  * @date 2026/3/8 1:08
  */
 @Configuration
@@ -24,7 +24,7 @@ public class AuthAutoConfiguration {
      * @return
      */
     @Bean
-    @ConditionalOnClass(DiscoveryClient.class)
+    @ConditionalOnClass(DiscoveryClient.class) // 只有当指定的类存在于类路径（classpath）中时，该注解所修饰的组件才会生效‌
     public JwtSignerHolder jwtSignerHolder(DiscoveryClient discoveryClient){
         return new JwtSignerHolder(discoveryClient);
     }
