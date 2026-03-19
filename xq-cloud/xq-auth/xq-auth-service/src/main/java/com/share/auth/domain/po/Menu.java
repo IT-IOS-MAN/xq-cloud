@@ -1,5 +1,6 @@
 package com.share.auth.domain.po;
 
+import cn.xbatis.db.annotations.Table;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.share.auth.domain.dto.MenuDTO;
@@ -20,6 +21,7 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
+@Table
 @TableName("menu")
 @NoArgsConstructor
 public class Menu implements Serializable {

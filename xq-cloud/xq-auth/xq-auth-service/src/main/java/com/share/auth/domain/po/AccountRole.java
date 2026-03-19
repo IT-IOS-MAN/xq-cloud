@@ -1,5 +1,6 @@
 package com.share.auth.domain.po;
 
+import cn.xbatis.db.annotations.Table;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -18,6 +19,7 @@ import java.io.Serializable;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
+@Table
 @TableName("account_role")
 public class AccountRole implements Serializable {
 

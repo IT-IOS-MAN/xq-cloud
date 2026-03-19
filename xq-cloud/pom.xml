@@ -42,6 +42,7 @@
         <swagger.version>3.0.3</swagger.version>
         <redisson.version>3.13.6</redisson.version>
         <xxl-job-version>2.3.1</xxl-job-version>
+        <xbatis.version>1.9.9-M2</xbatis.version>
         <org.projectlombok.version>1.18.20</org.projectlombok.version>
     </properties>
 
@@ -93,11 +94,19 @@
                 <artifactId>aspectjweaver</artifactId>
                 <version>${aspectj.version}</version>
             </dependency>
-
+            <!--  job  -->
             <dependency>
                 <groupId>com.xuxueli</groupId>
                 <artifactId>xxl-job-core</artifactId>
                 <version>${xxl-job-version}</version>
+            </dependency>
+            <!--  xbatis  -->
+            <dependency>
+                <groupId>cn.xbatis</groupId>
+                <artifactId>xbatis-spring-boot-parent</artifactId>
+                <version>${xbatis.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

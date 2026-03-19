@@ -17,7 +17,7 @@ import java.net.UnknownHostException;
  * @description:
  * @date 2026/3/7 16:43
  */
-@MapperScan("com.tianji.auth.mapper")
+@MapperScan("com.share.auth.mapper")
 @SpringBootApplication
 @EnableScheduling
 @Slf4j
