@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @author xq-cloud
  * @version 1.0
- * @description:
+ * @description: 服务降级配置
  * @date 2026/3/7 19:23
  */
 @Configuration

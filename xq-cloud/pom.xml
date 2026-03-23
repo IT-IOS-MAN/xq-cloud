@@ -42,7 +42,7 @@
         <swagger.version>3.0.3</swagger.version>
         <redisson.version>3.13.6</redisson.version>
         <xxl-job-version>2.3.1</xxl-job-version>
-        <xbatis.version>1.9.9-M2</xbatis.version>
+        <easy-query.version>3.1.27</easy-query.version>
         <org.projectlombok.version>1.18.20</org.projectlombok.version>
     </properties>
 
@@ -100,13 +100,17 @@
                 <artifactId>xxl-job-core</artifactId>
                 <version>${xxl-job-version}</version>
             </dependency>
-            <!--  xbatis  -->
+            <!-- 引入 easy-query 核心依赖 -->
             <dependency>
-                <groupId>cn.xbatis</groupId>
-                <artifactId>xbatis-spring-boot-parent</artifactId>
-                <version>${xbatis.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
+                <groupId>com.easy-query</groupId>
+                <artifactId>sql-api-proxy</artifactId>
+                <version>${easy-query.version}</version>
+            </dependency>
+            <!-- 按需引入 easy-query 的数据库方言支持依赖 -->
+            <dependency>
+                <groupId>com.easy-query</groupId>
+                <artifactId>sql-mysql</artifactId>
+                <version>${easy-query.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
