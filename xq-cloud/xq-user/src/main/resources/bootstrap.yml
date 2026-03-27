@@ -45,4 +45,4 @@ xq:
         - /users/ids
         - /users/me
   jdbc:
-    database: tj_user
+    database: sys_user
